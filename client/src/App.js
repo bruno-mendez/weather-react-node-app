@@ -66,14 +66,14 @@ render() {
         <br></br>
 
         {this.state.responseToPost!=='' && !this.state.loading &&
-            <>
+            <div>
                 <img src={this.state.responseToPost.icon_url}></img>
                 <Alert color="primary"> Weather of {this.state.responseToPost.city}: {this.state.responseToPost.desc}</Alert> 
                 <Alert color="success"> Temperature: {this.state.responseToPost.temp} °C </Alert>
                 <Alert color="danger"> Max:  {this.state.responseToPost.max} °C </Alert>
                 <Alert color="secondary"> Min: {this.state.responseToPost.min} °C </Alert>
                 <Alert color="info"> Feels like: {this.state.responseToPost.feels} °C </Alert>
-            </>
+            </div>
         }
         {this.state.loading &&
           <Spinner type="grow" color="primary" />
