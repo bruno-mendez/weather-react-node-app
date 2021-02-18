@@ -8,11 +8,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: 'true'}));
 
-
 app.post("/api/weather", function(req, res){
     console.log(req.body);
     const query = req.body.cityName;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&APPID=2db14349cb3ec9d6324cca8280cb51cb&units=metric&lang=es`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&APPID=2db14349cb3ec9d6324cca8280cb51cb&units=metric`;
     https.get(url, function (response){
         console.log(response.data);
 
